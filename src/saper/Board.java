@@ -44,7 +44,7 @@ public class Board {
                     System.out.print(countNeighbours(j, i) + "  ");
                 }
                 else if(board[j][i].getCzyFlaga())
-                    System.out.println("F  ");
+                    System.out.print("F  ");
                 else if (!board[j][i].getCzyOdkryte())
                     System.out.print("X  ");
                 else {
@@ -107,12 +107,14 @@ public class Board {
             System.out.println("Podaj współrzędną y:  ");
             y = scanner.nextInt() - 1;
             if (sprawdźCzyPoprawneWspół(x, y)) {
-                if (odp != 1) {
+                if (odp == 0) {
                     n++;
                     kliknijPole(x, y);
                 }
-                else if (odp == 1)
+                else if (odp == 1) {
                     board[x][y].setFlaga();
+                    printBoard();
+                }
             }
             else
                 System.out.println("Podane współrzędne są poza planszą");
