@@ -1,8 +1,10 @@
-package cwiki14_11_2022_saper;
+package saper;
 
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
@@ -71,6 +73,26 @@ public class Game {
         c.gridx = 2;
         c.gridy = 1;
         panel.add(rozmiarD, c);
+        
+        rozmiarM.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new GUI(20,20);
+            }
+        });
+        
+        rozmiarS.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new GUI(30,30);
+            }
+        });
+        
+        rozmiarD.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new GUI(40,40);
+            }
+        });
+        
+        
         title.setText("-----SAPER-----");
         czcionka = getFont();
         System.out.println(czcionka.getSize());
